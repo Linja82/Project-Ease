@@ -21,7 +21,7 @@ Click on the image below to view a demo created using Figma.
 	- Ping them to encourage them to accomplish their goals 🥅  
 
 3. Annoy your friends:
-	- If your friend has incomplete tasks you can send them a notofication 🔔 to remind them to stop being lazy
+	- If your friend has incomplete tasks you can send them a notification 🔔 to remind them to stop being lazy
 	- Users are limited to one ping per hour
 	- Cool-down for pings can be reset by paying in-app currency
 
