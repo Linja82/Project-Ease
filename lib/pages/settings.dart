@@ -1,15 +1,18 @@
-import 'package:ease/constants.dart';
-import 'package:ease/widgets/drawer_widget.dart';
 import 'package:flutter/material.dart';
 
-class HomePage extends StatelessWidget {
+import 'package:ease/constants.dart';
+import 'package:ease/widgets/drawer_widget.dart';
+
+
+class SettingsPage extends StatelessWidget {
+
   @override
   Widget build(BuildContext context) => Scaffold(
       drawer: GetDrawerWidget(),
       appBar: AppBar(
-        title: Text("Home"),
+        title: Text("Settings"),
         centerTitle: true,
-        backgroundColor: mainColour,
-      )
+        backgroundColor: drawerColour,
+      ),
   );
 }
