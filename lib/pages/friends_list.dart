@@ -13,5 +13,8 @@ class FriendsList extends StatelessWidget {
         centerTitle: true,
         backgroundColor: drawerColour,
       ),
+    body: Center(
+      child: Text("You have no friends!"),
+      ),
     );
 }
