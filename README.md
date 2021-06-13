@@ -28,3 +28,6 @@ Click on the image below to view a demo created using Figma.
 4. Store 🧧:
 	- Purchase a cool-down 🧊 reset for pings
 	- Purchase customized ping messages 📧
+
+## Note
+Some sensitive files have been removed from the repository and therefore this code may not run correctly.
