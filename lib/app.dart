@@ -1,5 +1,6 @@
 import 'package:ease/pages/home.dart';
 import 'package:ease/pages/friends_list.dart';
+import 'package:ease/pages/friends_list2.dart';
 import 'package:ease/pages/leaderboard.dart';
 import 'package:ease/pages/settings.dart';
 import 'package:ease/pages/store.dart';
@@ -39,7 +40,8 @@ class _HomeScreenState extends State<HomeScreen> {
       case NavigationItem.home:
         return HomePage();
       case NavigationItem.friends:
-        return FriendsList();
+        //return FriendsList();
+        return FriendListTwo();
       case NavigationItem.leaderboard:
         return LeaderBoard();
       case NavigationItem.store:
