@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:ease/widgets/drawer_widget.dart';
+import 'package:ease/constants.dart';
 
 class Todo extends StatelessWidget {
   @override
@@ -23,12 +24,15 @@ class _FriendListTwoState extends State<FriendListTwo> {
     return Scaffold(
       drawer: GetDrawerWidget(),
       appBar: AppBar(title: const Text('Friends'),
-      centerTitle: true,),
+      centerTitle: true,
+      backgroundColor: drawerColour,
+      ),
       body: ListView(children: _getItems()),
       // add items to the to-do list
       floatingActionButton: FloatingActionButton(
           onPressed: () => _showMyDialog(context),
           tooltip: 'Add Item',
+          backgroundColor: mainColour,
           child: Icon(Icons.add)),
     );
   }

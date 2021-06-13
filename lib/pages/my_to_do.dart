@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:ease/widgets/drawer_widget.dart';
+import 'package:ease/constants.dart';
 
 class myToDo extends StatefulWidget{
   @override
@@ -15,12 +16,15 @@ class _myToDoState extends State<myToDo>{
   Widget build(BuildContext context){
     return Scaffold(
       drawer: GetDrawerWidget(),
-      appBar: AppBar(title: const Text('My To-Do List')),
+      appBar: AppBar(title: const Text('My To-Do List'),
+      centerTitle: true,
+      backgroundColor: drawerColour),
       body: ListView(children: _getItems()),
       // put shite in the to do list
       floatingActionButton: FloatingActionButton(
         onPressed: () => _showMyDialog(context),
         tooltip: 'Add Item',
+        backgroundColor: mainColour,
         child: Icon(Icons.add)),
       );
   }
