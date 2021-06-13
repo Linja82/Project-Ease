@@ -33,12 +33,12 @@ class GetDrawerWidget extends StatelessWidget {
               text: "Home",
               icon: Icons.home,
             ),
-            // buildMenuItem(
-            //   context,
-            //   item: NavigationItem.todo_list,
-            //   text: "To do List",
-            //   icon: Icons.list,
-            // ),
+            buildMenuItem(
+              context,
+              item: NavigationItem.todo_list,
+              text: "To do List",
+              icon: Icons.list,
+            ),
             buildMenuItem(
               context,
               item: NavigationItem.friends,

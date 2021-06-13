@@ -1,6 +1,6 @@
 enum NavigationItem {
   home,
-  // todo_list,
+  todo_list,
   friends,
   leaderboard,
   store,

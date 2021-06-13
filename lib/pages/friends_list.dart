@@ -14,7 +14,18 @@ class FriendsList extends StatelessWidget {
         backgroundColor: drawerColour,
       ),
     body: Center(
-      child: Text("You have no friends!"),
-      ),
-    );
+      child: Text("You have no friends!",
+      style: TextStyle(
+        fontSize: 16.0,
+        fontWeight: FontWeight.bold,
+      ),),
+    ),
+    floatingActionButton: FloatingActionButton(onPressed: () {
+      
+    },
+      tooltip: "Add friends",
+      child: Icon(Icons.add),
+      backgroundColor: mainColour,
+    ),
+  );
 }

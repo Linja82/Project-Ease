@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:ease/widgets/drawer_widget.dart';
 
 class myToDo extends StatefulWidget{
   @override
@@ -13,6 +14,7 @@ class _myToDoState extends State<myToDo>{
   @override
   Widget build(BuildContext context){
     return Scaffold(
+      drawer: GetDrawerWidget(),
       appBar: AppBar(title: const Text('My To-Do List')),
       body: ListView(children: _getItems()),
       // put shite in the to do list
