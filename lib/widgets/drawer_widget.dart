@@ -1,5 +1,6 @@
 import 'package:ease/constants.dart';
 import 'package:ease/model/navigation_item.dart';
+import 'package:ease/providers/auth_provider.dart';
 import 'package:ease/providers/navigation_provider.dart';
 
 import 'package:flutter/cupertino.dart';
@@ -9,23 +10,23 @@ import 'package:provider/provider.dart';
 
 
 class GetDrawerWidget extends StatelessWidget {
-  
+
   @override
   Widget build(BuildContext context) => Drawer(
       child: Container(
         color: drawerColour,
-        child: Column(
+        child: ListView(
           children: <Widget>[
             DrawerHeader(
                 decoration: BoxDecoration(
                   color: mainColour,
                   image: DecorationImage(
-                    image: AssetImage('assets/icon.gif'),
+                    image: AssetImage('assets/images/icon.gif'),
                     fit: BoxFit.contain,
                     alignment: Alignment(1,0)
                   ),
                 ),
-                child: ListView(padding: EdgeInsets.zero,)
+                child: ListView(padding: EdgeInsets.zero),
             ),
             buildMenuItem(
               context,
@@ -57,7 +58,7 @@ class GetDrawerWidget extends StatelessWidget {
               text: "Store",
               icon: Icons.shopping_bag,
             ),
-            Spacer(),
+            SizedBox(height: 24),
             buildMenuItem(
               context,
               item: NavigationItem.settings,
@@ -65,12 +66,35 @@ class GetDrawerWidget extends StatelessWidget {
               icon: Icons.settings,
             ),
             ListTile(
-              trailing: Icon(Icons.logout),
+              trailing: Icon(
+                Icons.logout,
+                color: Colors.white,
+              ),
               onTap: () {
-                // final provider = Provider.of<GoogleSignInProvider>(context, listen: false);
-                // provider.logout();
+                showDialog(
+                    context: context,
+                    barrierDismissible: true,
+                    builder: (context) {
+                      return AlertDialog(
+                        title: Text("Logout",
+                          style: TextStyle(
+                            color: Colors.black54,
+                            fontSize: 20,),
+                        ),
+                        content: Text("Are you sure you want to logout?"),
+                        actions: [
+                          TextButton(onPressed: () {
+                            final provider = Provider.of<Authentication>(context, listen: false);
+                            provider.signOut();
+                            Navigator.pop(context);
+                          },
+                              child: Text("Yes")),
+                          TextButton(onPressed: () {Navigator.pop(context);}, child: Text("No")),
+                        ],
+                      );
+                    });
               },
-            )
+            ),
           ],
         ),
       ),
@@ -95,7 +119,7 @@ class GetDrawerWidget extends StatelessWidget {
           selected: isSelected,
           selectedTileColor: Colors.white24,
           leading: Icon(icon, color: color),
-          title: Text(text, style: TextStyle(color: color)),
+          title: Text(text, style: TextStyle(color: color, fontFamily: "Bungee", fontSize: 18)),
           onTap: () {
             selectItem(context, item);
           },
@@ -109,5 +133,3 @@ class GetDrawerWidget extends StatelessWidget {
   }
 
 }
-
-
